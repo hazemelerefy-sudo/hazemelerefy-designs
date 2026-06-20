@@ -20,27 +20,15 @@
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
-  <!-- Background card -->
   <rect x="1" y="1" width="1198" height="118" rx="12" fill="url(#bg)"/>
-
-  <!-- Gradient border -->
   <rect x="1" y="1" width="1198" height="118" rx="12" fill="none" stroke="url(#border-grad)" stroke-width="1"/>
-
-  <!-- Corner accents -->
   <g stroke="#22d3ee" stroke-width="1" fill="none" opacity="0.4">
     <path d="M20,20 L20,8 L32,8"/>
     <path d="M1180,20 L1180,8 L1168,8"/>
     <path d="M20,100 L20,112 L32,112"/>
     <path d="M1180,100 L1180,112 L1168,112"/>
   </g>
-
-  <!-- Main CTA text -->
-  <text x="600" y="52" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Fira Code',monospace" font-size="26" font-weight="700" fill="url(#text-grad)" filter="url(#glow)" letter-spacing="3">OPEN TO COLLABORATION</text>
-
-  <!-- Email -->
-  <text x="600" y="82" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Fira Code',monospace" font-size="13" fill="#94a3b8" letter-spacing="2">HAZEMELEREFY@GMAIL.COM</text>
-
-  <!-- Subtle accent line under text -->
+  <text x="600" y="52" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" fill="url(#text-grad)" filter="url(#glow)" letter-spacing="3">OPEN TO COLLABORATION</text>
+  <text x="600" y="82" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" fill="#94a3b8" letter-spacing="2">HAZEMELEREFY@GMAIL.COM</text>
   <line x1="450" y1="95" x2="750" y2="95" stroke="url(#text-grad)" stroke-width="0.5" opacity="0.3"/>
 </svg>

@@ -13,28 +13,16 @@
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-
-  <!-- Main gradient line -->
   <line x1="0" y1="20" x2="1200" y2="20" stroke="url(#line-grad)" stroke-width="1"/>
-
-  <!-- Center diamond -->
   <g transform="translate(600,20)" filter="url(#glow)">
     <polygon points="0,-5 5,0 0,5 -5,0" fill="#a78bfa" opacity="0.8">
       <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
     </polygon>
   </g>
-
-  <!-- Side accent dots -->
   <g fill="#22d3ee" opacity="0.3">
-    <circle cx="560" cy="20" r="1.5">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="640" cy="20" r="1.5">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" begin="2s"/>
-    </circle>
+    <circle cx="560" cy="20" r="1.5"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="20" r="1.5"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" begin="2s"/></circle>
   </g>
-
-  <!-- Outer accent dots -->
   <g fill="#f472b6" opacity="0.2">
     <circle cx="520" cy="20" r="1"/>
     <circle cx="680" cy="20" r="1"/>
