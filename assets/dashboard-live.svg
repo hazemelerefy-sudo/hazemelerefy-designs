@@ -70,6 +70,6 @@
     <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">DigiSteel-YOLO</text>
     <text x="0" y="40" class="mono label" font-size="11">No description</text>
     <text x="700" y="0" class="mono label" text-anchor="end">UPDATED</text>
-    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Jun 22</text>
+    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Jun 24</text>
   </g>
 </svg>
