@@ -44,7 +44,7 @@
   <g transform="translate(30, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">REPOSITORIES</text>
-    <text x="15" y="58" class="mono value accent">35</text>
+    <text x="15" y="58" class="mono value accent">36</text>
   </g>
 
   <g transform="translate(220, 110)">
@@ -67,9 +67,9 @@
 
   <g transform="translate(30, 210)">
     <text x="0" y="0" class="mono label">LATEST SHIP</text>
-    <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">DigiSteel-YOLO</text>
-    <text x="0" y="40" class="mono label" font-size="11">No description</text>
+    <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">neuroscope</text>
+    <text x="0" y="40" class="mono label" font-size="11">🧠 AI-Powered 3D Neural Network Architecture Visualizer</text>
     <text x="700" y="0" class="mono label" text-anchor="end">UPDATED</text>
-    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Jun 24</text>
+    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Jun 25</text>
   </g>
 </svg>
