@@ -50,7 +50,7 @@
   <g transform="translate(220, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">TOTAL STARS</text>
-    <text x="15" y="58" class="mono value purple">3</text>
+    <text x="15" y="58" class="mono value purple">4</text>
   </g>
 
   <g transform="translate(410, 110)">
