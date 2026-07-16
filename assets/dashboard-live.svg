@@ -37,7 +37,7 @@
   <rect width="800" height="260" rx="16" fill="url(#bg)"/>
 
   <text x="30" y="45" class="mono title" filter="url(#glow)">LIVE TELEMETRY</text>
-  <text x="30" y="68" class="mono subtitle">hazemelerefey / github / Jul 15, 2026</text>
+  <text x="30" y="68" class="mono subtitle">hazemelerefey / github / Jul 16, 2026</text>
 
   <line x1="30" y1="85" x2="770" y2="85" stroke="#334155" stroke-width="1"/>
 
