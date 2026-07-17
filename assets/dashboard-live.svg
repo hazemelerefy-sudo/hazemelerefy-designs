@@ -44,7 +44,7 @@
   <g transform="translate(30, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">REPOSITORIES</text>
-    <text x="15" y="58" class="mono value accent">39</text>
+    <text x="15" y="58" class="mono value accent">38</text>
   </g>
 
   <g transform="translate(220, 110)">
