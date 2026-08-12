@@ -56,7 +56,7 @@
   <g transform="translate(410, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">FOLLOWERS</text>
-    <text x="15" y="58" class="mono value pink">7</text>
+    <text x="15" y="58" class="mono value pink">8</text>
   </g>
 
   <g transform="translate(600, 110)">
