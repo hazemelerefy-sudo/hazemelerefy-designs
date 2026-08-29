@@ -6,10 +6,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitText } from "@/components/ui/SplitText";
-import { SERVICES } from "@/lib/data";
+import { EXPERTISE } from "@/lib/data";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
-export function Services() {
+export function Expertise() {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,8 +45,8 @@ export function Services() {
           onUpdate: (self) => {
             const progress = self.progress;
             const index = Math.min(
-              Math.floor(progress * SERVICES.length),
-              SERVICES.length - 1
+              Math.floor(progress * EXPERTISE.length),
+              EXPERTISE.length - 1
             );
             setActiveIndex(index);
           },
@@ -60,8 +60,8 @@ export function Services() {
   return (
     <section
       ref={sectionRef}
-      id="services"
-      data-name="How we can help"
+      id="expertise"
+      data-name="Expertise"
       className="relative bg-ink overflow-hidden"
     >
       {/* Pinned Viewport Container */}
@@ -71,7 +71,7 @@ export function Services() {
           <div>
             <SplitText
               as="h2"
-              text="How we can help"
+              text="What I do"
               className="text-display-md tracking-wider"
               stagger={0.02}
             />
@@ -84,10 +84,10 @@ export function Services() {
                 0{activeIndex + 1}
               </span>
               <span>/</span>
-              <span>0{SERVICES.length}</span>
+              <span>0{EXPERTISE.length}</span>
             </div>
 
-            <SectionLabel>(SERVICES)</SectionLabel>
+            <SectionLabel>(EXPERTISE)</SectionLabel>
           </div>
         </div>
 
@@ -99,9 +99,9 @@ export function Services() {
               reducedMotion ? "flex-col w-full" : "w-max will-change-transform"
             }`}
           >
-            {SERVICES.map((service, index) => (
+            {EXPERTISE.map((item, index) => (
               <article
-                key={service.title}
+                key={item.title}
                 className={`group flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-12 rounded-none border border-line bg-surface p-6 sm:p-8 lg:p-10 shadow-2xl transition-colors duration-300 hover:border-line-soft ${
                   reducedMotion
                     ? "w-full"
@@ -113,19 +113,19 @@ export function Services() {
                   <div>
                     <div className="flex items-center justify-between">
                       <span className="font-display text-4xl sm:text-5xl lg:text-6xl text-accent font-bold">
-                        {service.index}.
+                        {item.index}.
                       </span>
                       <span className="rounded-none border border-line bg-ink/50 px-4 py-1.5 text-xs sm:text-sm uppercase tracking-wider text-muted-light font-sans">
-                        Service 0{index + 1}
+                        Focus 0{index + 1}
                       </span>
                     </div>
 
                     <h3 className="mt-5 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display uppercase tracking-display text-paper group-hover:text-accent transition-colors duration-300">
-                      {service.title}
+                      {item.title}
                     </h3>
 
                     <p className="mt-4 max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-muted">
-                      {service.blurb}
+                      {item.blurb}
                     </p>
                   </div>
                 </div>
@@ -133,8 +133,8 @@ export function Services() {
                 {/* Right Image (Enlarged, Sharp Corners) */}
                 <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-auto w-full lg:w-[460px] xl:w-[540px] 2xl:w-[580px] h-[240px] sm:h-[300px] lg:h-[340px] xl:h-[380px] flex-shrink-0 overflow-hidden rounded-none bg-ink">
                   <Image
-                    src={service.image}
-                    alt={service.title}
+                    src={item.image}
+                    alt={item.title}
                     fill
                     sizes="(min-width: 1280px) 580px, (min-width: 1024px) 460px, 100vw"
                     className="object-cover transition-transform duration-700 ease-framer group-hover:scale-105"

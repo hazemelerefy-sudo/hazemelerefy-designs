@@ -1,6 +1,6 @@
 /**
  * Parenthesised eyebrow label — the source's consistent section-labelling
- * grammar: (ABOUT), (SERVICES), (TESTIMONIALS).
+ * grammar: (ABOUT), (EXPERTISE), (JOURNEY).
  */
 export function SectionLabel({
   children,

@@ -2,28 +2,37 @@
  * ─────────────────────────────────────────────────────────────────────────────
  *  SINGLE SOURCE OF TRUTH FOR ALL SITE CONTENT
  * ─────────────────────────────────────────────────────────────────────────────
- *  Images live in /public/images/. Drop your files there using the exact
- *  filenames referenced below and they appear automatically.
+ *  Every figure, date, and claim below comes from Youssef Sherif's CV and
+ *  project repositories. Nothing here is placeholder copy — if a number
+ *  changes, change it here and the whole site follows.
+ *
+ *  Images live in /public/images/.
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
 /* ── BRAND ─────────────────────────────────────────────────────────────────── */
 
 export const BRAND = {
-  name: "ECHO",
-  /** Shown oversized in the footer. Keep it short — it renders very large. */
-  wordmark: "ECHO",
+  /**
+   * Header/footer logo text. The hero wordmark shrinks into this exact slot on
+   * scroll, so `name` and `wordmark` must stay identical or the handoff jumps.
+   */
+  name: "YOUSSEF",
+  wordmark: "YOUSSEF",
+  fullName: "Youssef Sherif",
+  role: "Data Analyst",
   /** Split across two lines in the hero. */
-  headlineTop: "BEYOND DESIGN",
-  headlineBottom: "BUILT TO MATTER",
-  email: "hello@echostudio.com",
-  phone: "+1 (555) 234-5678",
-  location: "New York, NY",
-  timezone: "EST (UTC-5)",
-  availability: "Available for Q1 & Q2 projects",
+  headlineTop: "BEYOND THE NUMBERS",
+  headlineBottom: "BUILT FOR DECISIONS",
+  email: "yshreef924@gmail.com",
+  location: "Cairo, Egypt",
+  timezone: "EET (UTC+2)",
+  availability: "Open to data analyst roles, freelance projects, and internships",
   /** Short paragraph in the footer's first column. */
   footerNote:
-    "We are an independent creative studio partnering with ambitious brands to build transformative digital products and visual identities.",
+    "Junior data analyst and marketing analytics specialist based in Cairo, turning raw data into decisions teams can act on.",
+  /** Rendered in the footer's bottom bar. */
+  credit: "BUILT WITH NEXT.JS · GSAP · TAILWIND CSS",
   year: 2026,
 } as const;
 
@@ -34,26 +43,20 @@ export const BRAND = {
  * `ariaLabel` is what screen readers announce — keep it descriptive.
  */
 export const NAV_LINKS = [
-  { label: "About", href: "#about", ariaLabel: "Go to the about section" },
-  { label: "Work", href: "#work", ariaLabel: "See selected work" },
-  { label: "Why us", href: "#why-us", ariaLabel: "Read why to work with us" },
-  { label: "Services", href: "#services", ariaLabel: "View services offered" },
-  { label: "Process", href: "#process", ariaLabel: "See how we work" },
-  { label: "Pricing", href: "#pricing", ariaLabel: "View pricing plans" },
+  { label: "About", href: "#about", ariaLabel: "Read the about section" },
+  { label: "Projects", href: "#projects", ariaLabel: "See selected projects" },
+  { label: "Why me", href: "#why-me", ariaLabel: "See the numbers so far" },
+  { label: "Expertise", href: "#expertise", ariaLabel: "View areas of expertise" },
+  { label: "Experience", href: "#experience", ariaLabel: "See the professional journey" },
+  { label: "Skills", href: "#skills", ariaLabel: "View the technical toolkit" },
+  { label: "Education", href: "#education", ariaLabel: "View education and training" },
   { label: "Contact", href: "#cta", ariaLabel: "Get in touch" },
 ] as const;
 
-/** Legal links in the footer's bottom bar. */
-export const FOOTER_LINKS = [
-  { label: "Privacy", href: "#" },
-  { label: "Terms", href: "#" },
-  { label: "Licensing", href: "#" },
-] as const;
-
 export const SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
-  { label: "Twitter", href: "https://x.com" },
+  { label: "GitHub", href: "https://github.com/YoussefSherif218" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/youssefsherif-/" },
+  { label: "Email", href: "mailto:yshreef924@gmail.com" },
 ] as const;
 
 /* ── HERO ──────────────────────────────────────────────────────────────────── */
@@ -67,26 +70,25 @@ export const HERO: {
   /**
    * Cursor-spotlight backdrop. The base layer is always visible; the reveal
    * layer shows only inside the soft circle that trails the pointer, so the
-   * scene looks "peeled back" to a second version of itself. Use two images of
-   * the *same composition*, cropped identically, so they align pixel-for-pixel.
-   * Recommended: ~1280×720+ .webp.
+   * scene looks "peeled back" to a second version of itself.
    */
   base: "/images/hero-base.webp",
   reveal: "/images/hero-reveal.webp",
   /** Bottom-left statement. The first half is white, the rest dimmed. */
-  statementStrong: "We craft brands, websites, and digital experiences",
-  statementMuted: "designed with purpose, clarity, and impact",
+  statementStrong: "I turn raw datasets into strategic insights",
+  statementMuted: "across analytics, marketing, and applied AI.",
 };
 
 /* ── ABOUT ─────────────────────────────────────────────────────────────────── */
 
 export const ABOUT = {
   label: "(ABOUT)",
-  statementStrong: "We combine years of web design expertise with innovative ",
-  statementMuted: "experiences to create meaningful digital stories.",
+  statementStrong: "From biotechnology to data analytics — ",
+  statementMuted:
+    "I read a dataset for the business decision hiding inside it.",
 } as const;
 
-/* ── WORK ──────────────────────────────────────────────────────────────────── */
+/* ── PROJECTS ──────────────────────────────────────────────────────────────── */
 
 export interface Project {
   index: string;
@@ -101,34 +103,53 @@ export interface Project {
 export const PROJECTS: readonly Project[] = [
   {
     index: "01",
-    title: "Aether OS",
-    blurb: "Design system & web app for an AI cloud platform",
+    title: "RetailPulse AI",
+    blurb:
+      "Customer segmentation engine clustering roughly a million retail rows into four actionable business archetypes.",
     image: "/images/work-1.jpg",
-    href: "#",
-    year: "2025",
-    tags: ["Web Design", "Development"],
+    href: "https://github.com/YoussefSherif218/Retail-Pulse-AI-Strategic-Customer-Intelligence",
+    year: "2026",
+    tags: ["Python", "Scikit-learn", "K-Means"],
   },
   {
     index: "02",
-    title: "Veloce Motors",
-    blurb: "Brand identity & digital showroom for electric vehicles",
+    title: "Bank Marketing Analytics",
+    blurb:
+      "Campaign analysis and classification models identifying what drives term-deposit subscription.",
     image: "/images/work-2.jpg",
-    href: "#",
+    href: "https://github.com/YoussefSherif218/Bank-Marketing-Analytics",
     year: "2025",
-    tags: ["Branding", "Web Design"],
+    tags: ["Python", "Pandas", "Modelling"],
   },
   {
     index: "03",
-    title: "Lumina Audio",
-    blurb: "E-commerce experience & spatial 3D showcase for high-end audio",
+    title: "NeuroScope Core",
+    blurb:
+      "Data and research lead on a 3D visual neural-network builder: BRD/PRD authoring and 30+ structured requirements.",
     image: "/images/work-3.jpg",
-    href: "#",
+    href: "https://github.com/hazemelerefey/neuroscope",
     year: "2026",
-    tags: ["Branding", "Motion"],
+    tags: ["Requirements", "BRD/PRD", "Personas"],
+  },
+  {
+    index: "04",
+    title: "NeuroScope Landing",
+    blurb:
+      "Competitive gap analysis against TensorBoard, plus the scroll-driven conversion funnel and information architecture.",
+    image: "/images/service-2.jpg",
+    href: "https://github.com/hazemelerefey/neuroscope",
+    year: "2026",
+    tags: ["Market Analysis", "User Journeys"],
   },
 ] as const;
 
-/* ── WHY US / STATS ────────────────────────────────────────────────────────── */
+/** Button under the project list. */
+export const PROJECTS_CTA = {
+  label: "View all on GitHub",
+  href: "https://github.com/YoussefSherif218",
+} as const;
+
+/* ── WHY ME / STATS ────────────────────────────────────────────────────────── */
 
 export interface Stat {
   /** Numeric portion — rolls up on scroll. Digits only. */
@@ -139,32 +160,32 @@ export interface Stat {
 }
 
 export const STATS: readonly Stat[] = [
-  { value: 8, suffix: "+", label: "Years of experience in the industry" },
-  { value: 77, suffix: "%", label: "Customer satisfaction rate" },
-  { value: 5, suffix: "M", label: "In client revenue growth" },
+  { value: 2, suffix: "+", label: "Years across data analysis and marketing analytics" },
+  { value: 7, suffix: "+", label: "Social accounts managed across agency portfolios" },
+  { value: 1, suffix: "M", label: "Retail transaction rows modelled end to end" },
 ] as const;
 
-export const WHY_US = {
-  label: "(WHY US)",
+export const WHY_ME = {
+  label: "(WHY ME)",
   heading: "NUMBERS DON'T LIE",
   /** Full-bleed background image behind the stats. */
   image: "/images/why-us.jpg",
 } as const;
 
-/* ── FEATURED TESTIMONIAL ──────────────────────────────────────────────────── */
+/* ── PHILOSOPHY PULL-QUOTE ─────────────────────────────────────────────────── */
 
-export const FEATURED_TESTIMONIAL = {
+export const PHILOSOPHY = {
   quote:
-    "Working with them felt personal. The process was smooth, the design was stunning, and everything had meaning.",
-  author: "Client Name",
-  role: "Founder at Nova Studio",
-  avatar: "/images/avatar-featured.jpg",
-  image: "/images/testimonial-highlight.jpg",
+    "Understanding not just the numbers, but the business context behind them.",
+  author: BRAND.fullName,
+  role: "Applied AI & Data Analytics Scholar — Digilians, MCIT",
+  avatar: "/images/youssef.jpg",
+  image: "/images/youssef-3d.png",
 } as const;
 
-/* ── SERVICES ──────────────────────────────────────────────────────────────── */
+/* ── EXPERTISE ─────────────────────────────────────────────────────────────── */
 
-export interface Service {
+export interface Expertise {
   index: string;
   title: string;
   blurb: string;
@@ -172,218 +193,223 @@ export interface Service {
   image: string;
 }
 
-export const SERVICES: readonly Service[] = [
+export const EXPERTISE: readonly Expertise[] = [
   {
     index: "01",
-    title: "Web Design & Development",
-    blurb: "High-performance digital experiences with responsive layouts and 60fps animations.",
+    title: "Data Analysis",
+    blurb:
+      "Python, SQL, Excel, Tableau, and Power BI to pull actionable insight out of complex datasets.",
     items: [],
     image: "/images/service-1.jpg",
   },
   {
     index: "02",
-    title: "Branding & Identity",
-    blurb: "Comprehensive brand identity, logo design, visual systems, and brand guidelines.",
+    title: "Marketing Analytics",
+    blurb:
+      "Campaign performance analysis, audience insight, and data-driven marketing strategy.",
     items: [],
     image: "/images/service-2.jpg",
   },
   {
     index: "03",
-    title: "Social Media & Campaign",
-    blurb: "Creative social media graphics, campaign assets, and strategic content templates.",
+    title: "AI & ML Foundations",
+    blurb:
+      "Predictive models with machine learning and deep learning, via the Digilians MCIT scholarship.",
     items: [],
     image: "/images/service-3.jpg",
   },
   {
     index: "04",
-    title: "Motion & 3D Animation",
-    blurb: "Dynamic micro-interactions, 3D renders, and compelling product demos.",
+    title: "Digital Marketing",
+    blurb:
+      "Social media strategy, content creation, and brand management across multiple agencies.",
     items: [],
     image: "/images/service-4.jpg",
   },
 ] as const;
 
-/* ── PROCESS ───────────────────────────────────────────────────────────────── */
+/* ── EXPERIENCE ────────────────────────────────────────────────────────────── */
 
-export interface ProcessStep {
+export interface ExperienceRole {
   id: string;
+  /** Compact marker shown oversized on the card. */
   step: string;
   title: string;
+  /** Company and dates. */
   subtitle: string;
   body: string;
+  /** Rendered as the bulleted list on the expanded card. */
   subsections: string[];
   deliverables: string[];
   image: string;
 }
 
-export const PROCESS: readonly ProcessStep[] = [
+export const EXPERIENCE_ROLES: readonly ExperienceRole[] = [
   {
-    id: "step-1",
-    step: "STEP 01",
-    title: "Discovery",
-    subtitle: "Research & Alignment",
-    body: "Understanding goals, audience, and scope to define a clear roadmap.",
+    id: "role-1",
+    step: "NOW",
+    title: "Applied AI & Data Analytics Scholar",
+    subtitle: "Digilians Initiative, MCIT · Dec 2025 — Present",
+    body: "Selected for a nine-month scholarship from Egypt's Ministry of Communications, applying statistics and probability with Python, SQL, and Excel.",
     subsections: [
-      "Brand & Market Audit",
-      "User Journey Mapping",
-      "Scope & Milestone Timeline",
+      "Python, SQL & Excel",
+      "Statistics & probability",
+      "Machine & deep learning",
     ],
-    deliverables: ["Strategy Brief", "Project Scope"],
+    deliverables: ["Applied projects", "Scholarship track"],
     image: "/images/service-1.jpg",
   },
   {
-    id: "step-2",
-    step: "STEP 02",
-    title: "Concept",
-    subtitle: "UX & Visual Direction",
-    body: "Creating wireframes, design systems, and visual concepts for user flows.",
+    id: "role-2",
+    step: "2025",
+    title: "Senior Social Media Specialist",
+    subtitle: "Arcktech Marketing Agency · Feb — Oct 2025",
+    body: "Ran content creation and scheduling for seven social accounts spanning very different industries.",
     subsections: [
-      "Wireframes & Layouts",
-      "Color & Type Systems",
-      "Interactive Prototypes",
+      "Content strategy",
+      "Meta Business Suite",
+      "7 accounts in parallel",
     ],
-    deliverables: ["Figma UI Kit", "Prototype"],
+    deliverables: ["Content calendars", "Performance reporting"],
     image: "/images/service-2.jpg",
   },
   {
-    id: "step-3",
-    step: "STEP 03",
-    title: "Build",
-    subtitle: "Development & Motion",
-    body: "Developing clean, high-performance code with smooth 60fps animations.",
-    subsections: [
-      "Next.js App Router",
-      "GSAP Scroll Animations",
-      "SEO & Performance Tuning",
-    ],
-    deliverables: ["Clean Codebase", "Live Build"],
+    id: "role-3",
+    step: "2024",
+    title: "Social Media Specialist",
+    subtitle: "Vook Marketing Agency · Mar — Dec 2024",
+    body: "Grew client accounts with strategies built around each brand's goals, then reported on what actually moved.",
+    subsections: ["Account growth", "Content creation", "Channel analytics"],
+    deliverables: ["Channel strategy", "Growth reporting"],
     image: "/images/service-3.jpg",
   },
   {
-    id: "step-4",
-    step: "STEP 04",
-    title: "Launch",
-    subtitle: "QA & Handoff",
-    body: "Final testing, domain deployment, and ongoing post-launch support.",
-    subsections: [
-      "Cross-Device QA Testing",
-      "Production Deployment",
-      "Handoff & Support",
-    ],
-    deliverables: ["Production Site", "Support"],
+    id: "role-4",
+    step: "2023",
+    title: "Social Media Specialist",
+    subtitle: "Creative Digital Marketing · Jan 2023 — Feb 2024",
+    body: "Led digital campaigns that widened brand visibility across the agency's client base.",
+    subsections: ["Campaign delivery", "Copywriting", "Brand strategy"],
+    deliverables: ["Campaign assets", "Brand guidelines"],
     image: "/images/service-4.jpg",
   },
-] as const;
-
-/* ── TESTIMONIALS ──────────────────────────────────────────────────────────── */
-
-export interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  avatar: string;
-}
-
-export const TESTIMONIALS: readonly Testimonial[] = [
   {
-    quote: "Echo transformed our brand identity into an immersive digital experience that elevated our market presence.",
-    author: "Elena Rostova",
-    role: "CEO at Veloce",
-    avatar: "/images/avatar-1.jpg",
-  },
-  {
-    quote: "The speed, attention to detail, and smoothness of motion design blew our team away.",
-    author: "Marcus Vance",
-    role: "Head of Product at Aether",
-    avatar: "/images/avatar-2.jpg",
-  },
-  {
-    quote: "Exceptional visual taste and flawless technical execution. They delivered beyond expectations.",
-    author: "Sophia Chen",
-    role: "Design Lead at Lumina",
-    avatar: "/images/avatar-3.jpg",
-  },
-  {
-    quote: "Working with Echo felt like an extension of our internal team. Seamless communication throughout.",
-    author: "David Kellar",
-    role: "Founder at Apex",
-    avatar: "/images/avatar-4.jpg",
+    id: "role-5",
+    step: "2020",
+    title: "Customer Service Representative",
+    subtitle: "Concentrix · Oct 2020 — Feb 2022",
+    body: "Handled inbound and outbound customer calls — where the habit of listening for the real problem started.",
+    subsections: ["Communication", "Problem solving", "CRM systems"],
+    deliverables: ["Service targets", "Escalation handling"],
+    image: "/images/why-us.jpg",
   },
 ] as const;
 
-export const TESTIMONIALS_INTRO = {
-  label: "(TESTIMONIALS)",
-  heading:
-    "We deliver data-driven and result-focused work. Hear what our partners say about us.",
-  rating: "4.9",
-  ratingNote: "300+ Verified Reviews on Clutch",
-} as const;
+/* ── SKILLS ────────────────────────────────────────────────────────────────── */
 
-/* ── PRICING ───────────────────────────────────────────────────────────────── */
-
-export interface PricingTier {
+export interface SkillGroup {
   name: string;
   blurb: string;
-  /** null renders "Let's talk" instead of a number. */
-  monthly: number | null;
-  annual: number | null;
+  /** Self-assessed proficiency, rendered by the odometer. */
+  level: number;
+  /** Supporting skills, each with its own real level where one exists. */
   features: readonly string[];
   featured: boolean;
-  cta: string;
 }
 
-/** Discount applied on the annual toggle, shown as a badge. */
-export const ANNUAL_DISCOUNT = 20;
+export const SKILLS_INTRO = {
+  label: "(TOOLKIT)",
+  heading: "Skills",
+  note: "Levels are self-assessed against the work shipped so far.",
+} as const;
 
-export const PRICING: readonly PricingTier[] = [
+export const SKILL_GROUPS: readonly SkillGroup[] = [
   {
-    name: "Starter",
-    blurb: "Perfect for solo founders and early stage brands.",
-    monthly: 5999,
-    annual: 4799,
+    name: "Python",
+    blurb: "Data analysis, ML pipelines, and automation.",
+    level: 80,
     features: [
-      "1 Senior designer",
-      "72 hours turnaround time",
-      "One request at a time",
-      "Pause or cancel anytime",
-      "Up to 40 hours per month",
-      "Async communication",
-    ],
-    featured: false,
-    cta: "Get started",
-  },
-  {
-    name: "Growth",
-    blurb: "For scaling teams that ship continuously.",
-    monthly: 9999,
-    annual: 7999,
-    features: [
-      "2 Senior designers",
-      "48 hours turnaround time",
-      "Two requests at a time",
-      "Pause or cancel anytime",
-      "Up to 80 hours per month",
-      "Weekly strategy call",
-      "Priority support",
+      "Pandas · 75%",
+      "Scikit-learn · 65%",
+      "Matplotlib · 75%",
+      "Data cleaning · 80%",
+      "Statistics · 75%",
+      "ML fundamentals · 60%",
     ],
     featured: true,
-    cta: "Get started",
   },
   {
-    name: "Bespoke",
-    blurb: "Custom scope for complex, multi-team engagements.",
-    monthly: null,
-    annual: null,
+    name: "Excel",
+    blurb: "Advanced formulas, pivot tables, and dashboards.",
+    level: 85,
     features: [
-      "Dedicated design team",
-      "24 hours turnaround time",
-      "Unlimited requests",
-      "Custom contract terms",
-      "Unlimited hours",
-      "Dedicated Slack channel",
+      "SQL · 70%",
+      "Tableau · 65%",
+      "Power BI · 60%",
+      "Data storytelling · 70%",
+      "Microsoft Office",
     ],
     featured: false,
-    cta: "Book a call",
+  },
+  {
+    name: "Social Media",
+    blurb: "Strategy, content, and campaigns across 7+ accounts.",
+    level: 90,
+    features: [
+      "Meta Business Suite · 85%",
+      "Content creation · 85%",
+      "Campaign analytics · 80%",
+      "Copywriting · 80%",
+      "Canva · 85%",
+    ],
+    featured: false,
+  },
+] as const;
+
+/** Scrolling marquee under the skill cards. */
+export const TOOLS: readonly string[] = [
+  "Git & GitHub",
+  "Streamlit",
+  "Buffer",
+  "Google Analytics",
+  "CRM Systems",
+  "Microsoft Office",
+  "Deep Learning Basics",
+  "Data Mining",
+] as const;
+
+/* ── EDUCATION ─────────────────────────────────────────────────────────────── */
+
+export interface EducationItem {
+  title: string;
+  excerpt: string;
+  /** Date range, shown top-right on the card. */
+  date: string;
+  /** Short badge, shown top-left. */
+  category: string;
+}
+
+export const EDUCATION: readonly EducationItem[] = [
+  {
+    title: "Applied AI & Data Analytics",
+    excerpt:
+      "A nine-month Digilians Initiative scholarship from Egypt's Ministry of Communications, covering statistics, machine learning, deep learning, and visualisation with Python, SQL, and Excel.",
+    date: "Dec 2025 — Present",
+    category: "Scholarship",
+  },
+  {
+    title: "B.Sc. Biotechnology",
+    excerpt:
+      "Cairo University. Four years of hypothesis testing and lab-grade rigour — the same discipline analytics runs on.",
+    date: "Sep 2019 — Jun 2023",
+    category: "Degree",
+  },
+  {
+    title: "Social Media Marketing Track",
+    excerpt:
+      "ITI — MCIT, Fayoum. Strategy, content systems, and campaign analytics.",
+    date: "Nov 2024 — Mar 2025",
+    category: "Training",
   },
 ] as const;
 
@@ -396,62 +422,29 @@ export interface FaqItem {
 
 export const FAQ: readonly FaqItem[] = [
   {
-    question: "What's your typical process for a new project?",
-    answer: "We start with discovery and research, move into interactive design prototypes, and finish with clean development and testing.",
+    question: "What roles are you looking for?",
+    answer:
+      "Data analyst roles, freelance analytics projects, and internships — I'm currently open to all three.",
   },
   {
-    question: "How long does a typical project take?",
-    answer: "Most branding and web development projects are completed within 2 to 4 weeks depending on scope.",
+    question: "What's your core stack?",
+    answer:
+      "Python, SQL, and Excel for the analysis; Pandas, scikit-learn, and Matplotlib for modelling; Tableau and Power BI for reporting.",
   },
   {
-    question: "Do you work with clients outside your timezone?",
-    answer: "Yes, we work seamlessly with global clients through asynchronous updates and flexible scheduling.",
+    question: "How does biotechnology connect to data analytics?",
+    answer:
+      "A biotech degree is years of hypothesis testing, statistics, and evidence. Analytics needs exactly that discipline, pointed at business questions instead of lab results.",
   },
   {
-    question: "What do you need from me to get started?",
-    answer: "Just a quick project overview, your brand assets, and a kick-off call to align on goals.",
+    question: "Do you work with teams in other timezones?",
+    answer:
+      "Yes. I'm based in Cairo on EET and work asynchronously with clear written updates.",
   },
   {
-    question: "Can I pause or cancel my subscription?",
-    answer: "Yes, you can pause or cancel your project plan at any time with no lock-in contracts.",
-  },
-] as const;
-
-/* ── BLOG ──────────────────────────────────────────────────────────────────── */
-
-export interface Post {
-  title: string;
-  excerpt: string;
-  date: string;
-  category: string;
-  image: string;
-  href: string;
-}
-
-export const POSTS: readonly Post[] = [
-  {
-    title: "Why Clarity Beats Creativity in Web Design",
-    excerpt: "How clear messaging and structured layout drive higher engagement than complex visual tricks.",
-    date: "Feb 4, 2025",
-    category: "Design Strategy",
-    image: "/images/post-1.jpg",
-    href: "#",
-  },
-  {
-    title: "Why Motion Design Makes Your Website Feel Alive",
-    excerpt: "Motion helps your website feel modern and clear. Here's why it matters and how to execute it right.",
-    date: "Feb 4, 2025",
-    category: "Social Media",
-    image: "/images/post-2.jpg",
-    href: "#",
-  },
-  {
-    title: "What to Look for in a Premium Framer Template",
-    excerpt: "Not all Framer templates are built equal. Here's how to spot the ones worth your time and investment.",
-    date: "Feb 4, 2025",
-    category: "Branding",
-    image: "/images/post-3.jpg",
-    href: "#",
+    question: "What are you focused on right now?",
+    answer:
+      "Finishing the Digilians AI scholarship while shipping end-to-end projects — segmentation, predictive modelling, and data visualisation.",
   },
 ] as const;
 
@@ -461,8 +454,8 @@ export const CTA = {
   headingLine1: "LET'S WORK",
   headingLine2: "TOGETHER",
   blurb:
-    "Have a project in mind? We'd love to hear about it. Let's create something great together!",
+    "Open to data analyst roles, freelance projects, and internships. If you have a dataset or a decision to make, let's talk.",
   buttonLabel: "GET IN TOUCH",
-  buttonHref: "mailto:hello@echostudio.com",
+  buttonHref: `mailto:${BRAND.email}`,
   image: "/images/cta-bg.jpg",
 } as const;

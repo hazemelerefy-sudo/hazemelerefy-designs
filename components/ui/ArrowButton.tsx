@@ -8,11 +8,14 @@ export function ArrowButton({
   children,
   variant = "solid",
   className,
+  target,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: "solid" | "outline";
   className?: string;
+  /** Set to "_blank" for off-site destinations; rel is applied automatically. */
+  target?: "_blank";
 }) {
   const base =
     "group inline-flex items-center gap-3 rounded-full px-7 py-4 text-xs font-medium uppercase tracking-wider transition-colors duration-300 ease-framer";
@@ -22,7 +25,12 @@ export function ArrowButton({
       : "border border-line text-paper hover:border-accent hover:text-accent";
 
   return (
-    <Link href={href} className={`${base} ${styles} ${className ?? ""}`}>
+    <Link
+      href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
+      className={`${base} ${styles} ${className ?? ""}`}
+    >
       {children}
       <span
         aria-hidden

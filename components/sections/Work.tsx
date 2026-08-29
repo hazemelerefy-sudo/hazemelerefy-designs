@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { SplitText } from "@/components/ui/SplitText";
-import { PROJECTS, Project } from "@/lib/data";
+import { PROJECTS, PROJECTS_CTA, Project } from "@/lib/data";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 function ProjectCardItem({ project }: { project: Project }) {
@@ -71,7 +71,12 @@ function ProjectCardItem({ project }: { project: Project }) {
 
   return (
     <div ref={cardRef} className="group block">
-      <Link href={project.href} className="block">
+      <Link
+        href={project.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
         <div className="grid gap-8 lg:grid-cols-[1fr_0.55fr] lg:items-center">
           {/* Surrounding Frame with ScrollTrigger Un-clip Mask Reveal */}
           <div
@@ -120,11 +125,11 @@ function ProjectCardItem({ project }: { project: Project }) {
 
 export function Work() {
   return (
-    <section id="work" data-name="Latest work" className="shell py-28 lg:py-40">
+    <section id="projects" data-name="Selected work" className="shell py-28 lg:py-40">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <SplitText
           as="h2"
-          text="Latest work"
+          text="Selected work"
           className="text-display-md tracking-wide"
           stagger={0.025}
         />
@@ -138,8 +143,8 @@ export function Work() {
       </div>
 
       <div className="mt-20 flex justify-center">
-        <ArrowButton href="#" variant="outline">
-          More projects
+        <ArrowButton href={PROJECTS_CTA.href} variant="outline" target="_blank">
+          {PROJECTS_CTA.label}
         </ArrowButton>
       </div>
     </section>

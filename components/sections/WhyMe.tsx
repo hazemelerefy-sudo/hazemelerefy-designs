@@ -2,23 +2,23 @@ import { Odometer } from "@/components/ui/Odometer";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { SplitText } from "@/components/ui/SplitText";
-import { STATS, WHY_US } from "@/lib/data";
+import { STATS, WHY_ME } from "@/lib/data";
 
-export function WhyUs() {
+export function WhyMe() {
   return (
     <section
-      id="why-us"
-      data-name="Why us"
+      id="why-me"
+      data-name="Why me"
       className="relative overflow-hidden bg-ink py-28 lg:py-40"
     >
       <div className="shell relative z-10">
         <Reveal variant="fade">
-          <SectionLabel>{WHY_US.label}</SectionLabel>
+          <SectionLabel>{WHY_ME.label}</SectionLabel>
         </Reveal>
 
         <SplitText
           as="h2"
-          text={WHY_US.heading}
+          text={WHY_ME.heading}
           className="mt-8 text-display-md tracking-wider text-white"
           stagger={0.02}
         />

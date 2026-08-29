@@ -63,7 +63,7 @@
     @apply mx-auto w-full max-w-shell px-6;
   }
 
-  /* Parenthesised eyebrow label: (ABOUT), (SERVICES) */
+  /* Parenthesised eyebrow label: (ABOUT), (EXPERTISE) */
   .eyebrow {
     @apply font-sans text-xs uppercase tracking-widest text-muted;
   }

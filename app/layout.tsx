@@ -20,8 +20,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${BRAND.name} — Design Studio`,
-  description: BRAND.headlineTop + " " + BRAND.headlineBottom,
+  title: `${BRAND.fullName} — ${BRAND.role}`,
+  description:
+    "Junior data analyst specialising in Python, SQL, and marketing analytics. Cairo University graduate on the Digilians AI scholarship.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: `${BRAND.name} — Design Studio`,
+    title: `${BRAND.fullName} — ${BRAND.role}`,
     description: BRAND.headlineTop + " " + BRAND.headlineBottom,
   },
   twitter: { card: "summary_large_image" },

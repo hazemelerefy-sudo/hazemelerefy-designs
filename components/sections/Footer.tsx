@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND, FOOTER_LINKS, NAV_LINKS, SOCIALS } from "@/lib/data";
+import { BRAND, NAV_LINKS, SOCIALS } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -16,7 +16,18 @@ export function Footer() {
             >
               {BRAND.email}
             </Link>
-            <p className="mt-2 text-sm text-muted">{BRAND.phone}</p>
+            <p className="mt-2 text-sm text-muted">
+              {BRAND.location} &middot; {BRAND.timezone}
+            </p>
+
+            {/* Availability, with a live-status dot. */}
+            <p className="mt-6 flex items-start gap-2.5 text-xs leading-relaxed text-muted-light">
+              <span
+                aria-hidden
+                className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent shadow-glow"
+              />
+              {BRAND.availability}
+            </p>
           </div>
 
           <nav aria-label="Sections">
@@ -38,16 +49,22 @@ export function Footer() {
           <nav aria-label="Social">
             <h2 className="eyebrow">Elsewhere</h2>
             <ul className="mt-5 flex flex-col gap-3">
-              {SOCIALS.map((social) => (
-                <li key={social.label}>
-                  <Link
-                    href={social.href}
-                    className="text-sm text-muted-light transition-colors duration-300 hover:text-accent"
-                  >
-                    {social.label}
-                  </Link>
-                </li>
-              ))}
+              {SOCIALS.map((social) => {
+                const external = social.href.startsWith("http");
+
+                return (
+                  <li key={social.label}>
+                    <Link
+                      href={social.href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      className="text-sm text-muted-light transition-colors duration-300 hover:text-accent"
+                    >
+                      {social.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
@@ -81,20 +98,9 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 border-t border-line py-8 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-muted">
-            &copy; {BRAND.year} {BRAND.name}. All rights reserved.
+            &copy; {BRAND.year} {BRAND.fullName}. All rights reserved.
           </p>
-          <ul className="flex items-center gap-6">
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className="text-xs text-muted transition-colors duration-300 hover:text-accent"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="text-xs tracking-wider text-muted">{BRAND.credit}</p>
         </div>
       </div>
     </footer>
