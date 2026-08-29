@@ -89,7 +89,11 @@ function ProjectCardItem({ project }: { project: Project }) {
                 alt={project.title}
                 fill
                 sizes="(min-width: 1200px) 65vw, 100vw"
-                className="object-cover transition-transform duration-700 ease-framer group-hover:scale-[1.03]"
+                className={`transition-transform duration-700 ease-framer group-hover:scale-[1.03] ${
+                  project.imagePosition === "right"
+                    ? "object-cover object-right"
+                    : "object-cover object-center"
+                }`}
               />
             </div>
           </div>
@@ -105,6 +109,15 @@ function ProjectCardItem({ project }: { project: Project }) {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               {project.blurb}
             </p>
+            {/* Team projects state the contribution outright. */}
+            {project.role ? (
+              <p className="mt-4 flex max-w-sm items-baseline gap-2 text-xs leading-relaxed text-muted-light">
+                <span className="shrink-0 font-sans uppercase tracking-wider text-accent">
+                  Role
+                </span>
+                <span>{project.role}</span>
+              </p>
+            ) : null}
             <div className="mt-6 flex flex-wrap items-center gap-2">
               {project.tags.map((tag) => (
                 <span

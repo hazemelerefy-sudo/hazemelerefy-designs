@@ -98,48 +98,78 @@ export interface Project {
   href: string;
   year: string;
   tags: readonly string[];
+  /** Set on team projects only, so the contribution is never left implied. */
+  role?: string;
+  /**
+   * Crop anchor for the card image. Cards are ~1.2:1, so wide banners need
+   * pulling off-centre to avoid slicing their artwork mid-word.
+   */
+  imagePosition?: "center" | "right";
 }
 
 export const PROJECTS: readonly Project[] = [
   {
     index: "01",
-    title: "RetailPulse AI",
+    title: "Logistics Delay Prediction",
     blurb:
-      "Customer segmentation engine clustering roughly a million retail rows into four actionable business archetypes.",
+      "Random Forest flagging late shipments at 88.9% accuracy across 6,880 GPS-tracked deliveries, plus an 11-table SQL Server schema with an ERD and ten business queries.",
     image: "/images/work-1.jpg",
-    href: "https://github.com/YoussefSherif218/Retail-Pulse-AI-Strategic-Customer-Intelligence",
+    href: "https://github.com/YoussefSherif218/Transportation_and_Logistics_Tracking",
     year: "2026",
-    tags: ["Python", "Scikit-learn", "K-Means"],
+    tags: ["Python", "Random Forest", "SQL Server"],
   },
   {
     index: "02",
-    title: "Bank Marketing Analytics",
+    title: "DAFEsteel",
     blurb:
-      "Campaign analysis and classification models identifying what drives term-deposit subscription.",
-    image: "/images/work-2.jpg",
-    href: "https://github.com/YoussefSherif218/Bank-Marketing-Analytics",
-    year: "2025",
-    tags: ["Python", "Pandas", "Modelling"],
+      "DAFEGate, a morphology-aware module for YOLOv11n, lifting steel-defect mAP@0.5 from 79.35% to 81.98% on the NEU-DET benchmark — at 145 FPS and only 2.69M parameters.",
+    image: "/images/project-dafesteel.png",
+    href: "https://github.com/hazemelerefey/DAFEsteel",
+    year: "2026",
+    tags: ["PyTorch", "YOLOv11", "Computer Vision"],
+    role: "Research, model code review & module architecture",
+    imagePosition: "right",
   },
   {
     index: "03",
-    title: "NeuroScope Core",
+    title: "NeuroScope",
     blurb:
-      "Data and research lead on a 3D visual neural-network builder: BRD/PRD authoring and 30+ structured requirements.",
-    image: "/images/work-3.jpg",
-    href: "https://github.com/hazemelerefey/neuroscope",
+      "An interactive 3D workspace for configuring deep learning architectures — visualise, select, and wire model components directly in the browser.",
+    image: "/images/project-neuroscope.webp",
+    href: "https://github.com/hazemelerefey/NeuroScope",
     year: "2026",
-    tags: ["Requirements", "BRD/PRD", "Personas"],
+    tags: ["Deep Learning", "Three.js", "React"],
+    role: "Model code & research",
   },
   {
     index: "04",
-    title: "NeuroScope Landing",
+    title: "RetailPulse AI",
     blurb:
-      "Competitive gap analysis against TensorBoard, plus the scroll-driven conversion funnel and information architecture.",
-    image: "/images/service-2.jpg",
-    href: "https://github.com/hazemelerefey/neuroscope",
+      "K-Means segmentation over roughly a million Online Retail II rows, engineering RFM features into four actionable customer archetypes.",
+    image: "/images/work-2.jpg",
+    href: "https://github.com/YoussefSherif218/Retail-Pulse-AI-Strategic-Customer-Intelligence",
     year: "2026",
-    tags: ["Market Analysis", "User Journeys"],
+    tags: ["Python", "Scikit-learn", "Streamlit"],
+  },
+  {
+    index: "05",
+    title: "Retail SQL Lab",
+    blurb:
+      "The same Online Retail II data taken the other way — a five-table star schema, 1.07M invoice lines bulk-loaded, and the entire EDA written in T-SQL.",
+    image: "/images/work-3.jpg",
+    href: "https://github.com/YoussefSherif218/Retail-SQL-Lab",
+    year: "2026",
+    tags: ["SQL Server", "T-SQL", "Star Schema"],
+  },
+  {
+    index: "06",
+    title: "Bank Marketing Analytics",
+    blurb:
+      "EDA and classification models identifying what actually drives term-deposit subscription in a bank marketing campaign.",
+    image: "/images/service-2.jpg",
+    href: "https://github.com/YoussefSherif218/Bank-Marketing-Analytics",
+    year: "2025",
+    tags: ["Python", "Pandas", "Scikit-learn"],
   },
 ] as const;
 
