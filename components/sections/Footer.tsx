@@ -74,7 +74,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-sm text-muted-light transition-colors duration-300 hover:text-accent"
                 >
-                  CV (PDF)
+                  {RESUME.navLabel}
                   <span className="sr-only">, opens in a new tab</span>
                 </a>
               </li>

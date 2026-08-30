@@ -45,6 +45,14 @@ export interface StaggeredMenuProps {
   /** Optional CTA rendered to the left of the toggle. Hidden when unset. */
   ctaLabel?: string;
   ctaHref?: string;
+  /**
+   * Optional secondary action rendered beside the CTA, sharing its exact
+   * styling. Set `secondaryDownloadAs` to make it save the file rather than
+   * navigate to it.
+   */
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  secondaryDownloadAs?: string;
   menuButtonColor?: string;
   openMenuButtonColor?: string;
   accentColor?: string;
@@ -82,6 +90,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   logoHref = "#hero",
   ctaLabel,
   ctaHref = "#cta",
+  secondaryLabel,
+  secondaryHref,
+  secondaryDownloadAs,
   menuButtonColor = "#fff",
   openMenuButtonColor = "#fff",
   accentColor = "#5227FF",
@@ -628,6 +639,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <div className="sm-actions">
+          {secondaryLabel && secondaryHref ? (
+            <a
+              className="sm-cta"
+              href={secondaryHref}
+              download={secondaryDownloadAs}
+            >
+              {secondaryLabel}
+            </a>
+          ) : null}
+
           {ctaLabel ? (
             <a className="sm-cta" href={ctaHref}>
               {ctaLabel}

@@ -1,7 +1,7 @@
 "use client";
 
 import { StaggeredMenu } from "@/components/ui/StaggeredMenu";
-import { BRAND, NAV_LINKS, SOCIALS } from "@/lib/data";
+import { BRAND, NAV_LINKS, RESUME, SOCIALS } from "@/lib/data";
 
 /**
  * Site header. Wires the shared content layer into StaggeredMenu — the panel
@@ -32,6 +32,10 @@ export function SiteMenu() {
       logoHref="#hero"
       ctaLabel="Let's Talk"
       ctaHref="#cta"
+      /* Same pill styling as the CTA; downloads rather than navigates. */
+      secondaryLabel={RESUME.navLabel}
+      secondaryHref={RESUME.href}
+      secondaryDownloadAs={RESUME.filename}
       /* Accent-tinted underlays sweep in ahead of the ink panel. */
       colors={["#220F0D", "#FF4925"]}
       accentColor="#FF4925"

@@ -488,6 +488,8 @@ export const FAQ: readonly FaqItem[] = [
 export const RESUME = {
   /** Lives in /public, so it is served as a static file. */
   href: "/youssef-sherif-cv.pdf",
+  /** Header button and footer link. */
+  navLabel: "Resume",
   viewLabel: "View CV",
   downloadLabel: "Download PDF",
   /** Filename the browser saves it as. */
