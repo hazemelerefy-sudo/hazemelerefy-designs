@@ -111,23 +111,18 @@
     transform-origin: center 40%;
   }
 
-  /* Feathers the photo's hard edges into the black page background. */
+  /* The backdrop is shown at full strength so the artwork reads at full
+     resolution. Only the very bottom is feathered, purely so the hero hands
+     off to the ink section below without a hard seam. */
   .hero-vignette {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(
-        62% 62% at 52% 46%,
-        transparent 38%,
-        theme("colors.ink") 100%
-      ),
-      linear-gradient(
-        to bottom,
-        theme("colors.ink") 0%,
-        transparent 22%,
-        transparent 58%,
-        theme("colors.ink") 96%
-      );
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 90%,
+      theme("colors.ink") 100%
+    );
   }
 
   .hero-mark {
