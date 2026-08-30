@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BRAND, NAV_LINKS, SOCIALS } from "@/lib/data";
+import { BRAND, NAV_LINKS, RESUME, SOCIALS } from "@/lib/data";
 
 export function Footer() {
   return (
@@ -65,6 +65,19 @@ export function Footer() {
                   </li>
                 );
               })}
+
+              {/* The CV sits with the outbound links, where people look for it. */}
+              <li>
+                <a
+                  href={RESUME.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-light transition-colors duration-300 hover:text-accent"
+                >
+                  CV (PDF)
+                  <span className="sr-only">, opens in a new tab</span>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

@@ -483,6 +483,17 @@ export const FAQ: readonly FaqItem[] = [
   },
 ] as const;
 
+/* ── CV / RÉSUMÉ ───────────────────────────────────────────────────────────── */
+
+export const RESUME = {
+  /** Lives in /public, so it is served as a static file. */
+  href: "/youssef-sherif-cv.pdf",
+  viewLabel: "View CV",
+  downloadLabel: "Download PDF",
+  /** Filename the browser saves it as. */
+  filename: "Youssef-Sherif-CV.pdf",
+} as const;
+
 /* ── CTA ───────────────────────────────────────────────────────────────────── */
 
 export const CTA = {
