@@ -205,12 +205,17 @@ export const WHY_ME = {
 /* ── PHILOSOPHY PULL-QUOTE ─────────────────────────────────────────────────── */
 
 export const PHILOSOPHY = {
+  label: "(PHILOSOPHY)",
   quote:
     "Understanding not just the numbers, but the business context behind them.",
   author: BRAND.fullName,
   role: "Applied AI & Data Analytics Scholar — Digilians, MCIT",
-  avatar: "/images/youssef.jpg",
-  image: "/images/youssef-3d.png",
+  /**
+   * Studio cutout with a transparent background, trimmed to the subject
+   * (667x1194). Because it has alpha it is composited as a standing figure on
+   * the ink background — never used as a faded full-bleed texture.
+   */
+  portrait: "/images/youssef-portrait.webp",
 } as const;
 
 /* ── EXPERTISE ─────────────────────────────────────────────────────────────── */
@@ -487,5 +492,6 @@ export const CTA = {
     "Open to data analyst roles, freelance projects, and internships. If you have a dataset or a decision to make, let's talk.",
   buttonLabel: "GET IN TOUCH",
   buttonHref: `mailto:${BRAND.email}`,
-  image: "/images/cta-bg.jpg",
+  /** The person you are about to email, rather than stock imagery. */
+  image: PHILOSOPHY.portrait,
 } as const;

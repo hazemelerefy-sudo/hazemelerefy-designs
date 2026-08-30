@@ -1,61 +1,92 @@
 import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { PHILOSOPHY } from "@/lib/data";
 
 /**
- * Full-width pull-quote. Same treatment the template used for a client
- * testimonial, repurposed to carry Youssef's own working principle — with his
- * portrait behind it at low opacity.
+ * Identity band. The portrait is a transparent cutout, so it is composited as
+ * a standing figure directly on the ink — bottom-aligned and flush with the
+ * section edge, with a warm radial glow behind it and an elliptical floor
+ * shadow beneath. Those two details are what stop a cutout reading as a
+ * sticker pasted onto the page.
  */
 export function Philosophy() {
   return (
     <section
       id="philosophy"
       data-name="Philosophy"
-      className="shell py-28 lg:py-40"
+      className="relative overflow-hidden"
     >
-      <Reveal variant="scale">
-        <div className="relative overflow-hidden rounded-xl border border-line bg-surface">
-          <Image
-            src={PHILOSOPHY.image}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover object-top opacity-20"
-          />
+      {/* Accent-tinted glow, centred behind the figure. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(46% 52% at 26% 72%, rgba(255,73,37,0.13) 0%, rgba(255,73,37,0.04) 45%, transparent 72%)",
+        }}
+      />
 
-          <div className="relative px-8 py-20 text-center lg:px-24 lg:py-32">
+      <div className="shell relative grid items-end gap-12 pt-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pt-36">
+        {/* Portrait — bottom edge sits flush with the section, so he stands on
+            the boundary with the next section rather than inside a box. */}
+        <Reveal variant="up" className="block">
+          <div className="relative mx-auto flex h-[400px] w-full max-w-[360px] items-end sm:h-[480px] lg:h-[580px] lg:max-w-none">
+            <Image
+              src={PHILOSOPHY.portrait}
+              alt={`${PHILOSOPHY.author}, ${PHILOSOPHY.role}`}
+              fill
+              sizes="(min-width: 1024px) 36vw, 88vw"
+              className="object-contain object-bottom"
+              /* Fades the cutout's cropped hem into the page instead of ending
+                 on a hard horizontal cut. Masking the image itself — rather
+                 than layering an opaque panel over it — avoids a visible
+                 rectangle against the glow behind. */
+              style={{
+                maskImage:
+                  "linear-gradient(to top, transparent 0%, #000 13%, #000 100%)",
+                WebkitMaskImage:
+                  "linear-gradient(to top, transparent 0%, #000 13%, #000 100%)",
+              }}
+            />
+          </div>
+        </Reveal>
+
+        {/* Quote */}
+        <div className="pb-24 lg:pb-36">
+          <Reveal variant="fade">
+            <SectionLabel>{PHILOSOPHY.label}</SectionLabel>
+          </Reveal>
+
+          <Reveal variant="up" className="mt-8 block">
             <span
               aria-hidden
-              className="font-display text-7xl leading-none text-accent"
+              className="block font-display text-6xl leading-none text-accent"
             >
               &ldquo;
             </span>
 
-            <blockquote className="mx-auto mt-6 max-w-4xl font-display text-3xl uppercase leading-tight tracking-display lg:text-5xl">
+            <blockquote className="mt-4 max-w-2xl font-display text-3xl uppercase leading-tight tracking-display sm:text-4xl lg:text-5xl">
               {PHILOSOPHY.quote}
             </blockquote>
+          </Reveal>
 
-            <div className="mt-12 flex items-center justify-center gap-4">
-              <span className="relative h-14 w-14 overflow-hidden rounded-full bg-line">
-                <Image
-                  src={PHILOSOPHY.avatar}
-                  alt={PHILOSOPHY.author}
-                  fill
-                  sizes="56px"
-                  /* Source is a half-body portrait — zoom from the top edge so
-                     the circle frames the face rather than the torso. */
-                  className="origin-top scale-[2.4] object-cover"
-                />
-              </span>
-              <div className="text-left">
-                <p className="text-sm font-medium">{PHILOSOPHY.author}</p>
-                <p className="text-xs text-muted">{PHILOSOPHY.role}</p>
+          <Reveal variant="fade" className="mt-10 block">
+            {/* Accent rule ties the attribution to the quote above it. */}
+            <div className="flex items-center gap-4">
+              <span aria-hidden className="h-px w-10 bg-accent" />
+              <div>
+                <p className="text-sm font-medium text-paper">
+                  {PHILOSOPHY.author}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-muted">
+                  {PHILOSOPHY.role}
+                </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }
