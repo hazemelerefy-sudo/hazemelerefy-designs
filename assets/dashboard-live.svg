@@ -67,9 +67,9 @@
 
   <g transform="translate(30, 210)">
     <text x="0" y="0" class="mono label">LATEST SHIP</text>
-    <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">automated-social-content-publisher</text>
-    <text x="0" y="40" class="mono label" font-size="11">Enterprise-grade autonomous social content engine built</text>
+    <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">social-intelligence-publisher</text>
+    <text x="0" y="40" class="mono label" font-size="11">Production-grade n8n workflow for live topic intelligen</text>
     <text x="700" y="0" class="mono label" text-anchor="end">UPDATED</text>
-    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Sep 22</text>
+    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Sep 23</text>
   </g>
 </svg>
