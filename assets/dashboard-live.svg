@@ -44,7 +44,7 @@
   <g transform="translate(30, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">REPOSITORIES</text>
-    <text x="15" y="58" class="mono value accent">63</text>
+    <text x="15" y="58" class="mono value accent">64</text>
   </g>
 
   <g transform="translate(220, 110)">
@@ -56,7 +56,7 @@
   <g transform="translate(410, 110)">
     <rect width="170" height="80" rx="10" class="box"/>
     <text x="15" y="25" class="mono label">FOLLOWERS</text>
-    <text x="15" y="58" class="mono value pink">12</text>
+    <text x="15" y="58" class="mono value pink">11</text>
   </g>
 
   <g transform="translate(600, 110)">
@@ -70,6 +70,6 @@
     <text x="0" y="22" class="mono value" font-size="15" fill="#e2e8f0">hazemelerefey</text>
     <text x="0" y="40" class="mono label" font-size="11">GitHub Profile Repository</text>
     <text x="700" y="0" class="mono label" text-anchor="end">UPDATED</text>
-    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Nov 2</text>
+    <text x="700" y="22" class="mono value" font-size="15" text-anchor="end" fill="#e2e8f0">Nov 3</text>
   </g>
 </svg>
